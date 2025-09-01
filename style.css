@@ -1,6 +1,72 @@
+/* Tipografía cómica estilo retro */
 body {
-  font-family: sans-serif;
-  background-color: #f5f5f5;
+  font-family: 'Fredoka One', cursive;
   text-align: center;
-  margin-top: 50px;
+  background: linear-gradient(to bottom, #000000, #550000);
+  color: #fff;
+  margin: 0;
+  padding-bottom: 100px; /* espacio para fuego */
+}
+
+h1 {
+  font-size: 3em;
+  text-shadow: 2px 2px 5px yellow;
+}
+
+button {
+  padding: 15px 25px;
+  font-size: 1.2em;
+  background-color: #ff0;
+  border: 3px solid red;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 #000;
+}
+
+button:hover {
+  background-color: orange;
+}
+
+/* FUEGO ANIMADO */
+.fuego-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.fuego {
+  width: 30px;
+  height: 60px;
+  background: orange;
+  border-radius: 50% 50% 0 0;
+  animation: fuego 0.8s infinite ease-in-out;
+  opacity: 0.7;
+}
+
+.fuego:nth-child(2) {
+  animation-delay: 0.2s;
+  background: red;
+}
+
+.fuego:nth-child(3) {
+  animation-delay: 0.4s;
+  background: yellow;
+}
+
+@keyframes fuego {
+  0% {
+    transform: scaleY(1) translateY(0);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scaleY(1.5) translateY(-10px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scaleY(1) translateY(0);
+    opacity: 0.9;
+  }
 }
